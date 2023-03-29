@@ -2,15 +2,15 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
-using MGT.Utilities.EventHandlers;
+//using MGT.Utilities.EventHandlers;
 
 namespace MGT.HRM.HRP
 {
     public abstract class BtHrpFileLogger : BtHrpLogger, IHRMFileLogger
     {
-        public event GenericEventHandler<string> FileNameChanged;
+        //public event GenericEventHandler<string> FileNameChanged; TODO
 
-        protected string fileName;
+        protected string? fileName;
         public string FileName
         {
             get
@@ -25,16 +25,16 @@ namespace MGT.HRM.HRP
                 string bck = fileName;
 
                 fileName = value;
-                if (bck != value)
-                    if (FileNameChanged != null)
-                        FileNameChanged(this, value);
+                // if (bck != value)
+                    // if (FileNameChanged != null)
+                    //     FileNameChanged(this, value);
             }
         }
 
         public override void ResetSubscriptions()
         {
             base.ResetSubscriptions();
-            FileNameChanged = null;
+            // FileNameChanged = null;
         }
     }
 }

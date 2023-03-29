@@ -5,9 +5,7 @@ using System.Windows.Forms;
 using MGT.ECG_Signal_Generator;
 using MGT.HRM.Emulator;
 using MGT.HRM;
-using MGT.HRM.Zephyr_HxM;
 using System.Collections.Concurrent;
-using MGT.HRM.CMS50;
 using MGT.HRM.HRP;
 
 namespace MGT.Cardia
@@ -61,7 +59,6 @@ namespace MGT.Cardia
             InitializeDevices();
             InitializeAlarmPanel();
             InitializeLogPanel();
-            InitializeNetworkPanel();
             InitializeColors();
         }
 
@@ -327,8 +324,6 @@ namespace MGT.Cardia
 
         private void HRMUISmall_FormClosing(object sender, FormClosingEventArgs e)
         {
-            if (cardia.NetworkRelay.Running)
-                cardia.StopNetwork();
             cardia.Stop();
         }
 
@@ -537,23 +532,7 @@ namespace MGT.Cardia
 
         #endregion
 
-        #region Networking
-
-        NetworkFrm networkPanel;
         IDictionary<int, ECGDisplay> displays = new ConcurrentDictionary<int, ECGDisplay>();
-
-        private bool InitializeNetworkPanel()
-        {
-            networkPanel = new NetworkFrm(cardia);
-            cardia.NetworkConnected += cardia_NetworkConnected;
-            cardia.NetworkDisconnected += cardia_NetworkDisconnected;
-            cardia.NetworkClientConnected += cardia_NetworkClientConnected;
-            cardia.NetworkClientDisconnected += cardia_NetworkClientDisconnected;
-            cardia.NetworkMessageReceived += cardia_NetworkMessageReceived;
-            cardia.ClientSignalGenerated += cardia_ClientSignalGenerated;
-
-            return true;
-        }
 
         void cardia_ClientSignalGenerated(object sender, int clientId, SignalGeneratedEventArgs e)
         {
@@ -568,112 +547,5 @@ namespace MGT.Cardia
                 }
             ));
         }
-
-        void cardia_NetworkMessageReceived(object sender, HeartRateMessage message)
-        {
-            this.Invoke((MethodInvoker)(
-                delegate()
-                {
-                    displays[message.ClientId].BPM = message.BPM;
-                    displays[message.ClientId].MinBPM = message.MinBPM;
-                    displays[message.ClientId].MaxBPM = message.MaxBPM;
-                }
-            ));
-        }
-
-        void cardia_NetworkClientDisconnected(object sender, int clientId)
-        {
-            if (!this.IsHandleCreated)
-                return;
-
-            this.Invoke((MethodInvoker)(
-                delegate()
-                {
-                    try
-                    {
-                        ECGDisplay clientDisplay = displays[clientId];
-                        flpClients.Controls.Remove(clientDisplay);
-                        clientDisplay.Dispose();
-                        displays.Remove(clientId);
-                        SetFormHeight();
-                    }
-                    catch (KeyNotFoundException) { }
-                }
-            ));
-        }
-
-        void cardia_NetworkClientConnected(object sender, int clientId, string nickname)
-        {
-            ECGDisplay clientDisplay = new ECGDisplay();
-            displays[clientId] = clientDisplay;
-
-            this.Invoke((MethodInvoker)(
-                delegate()
-                {
-                    this.SuspendLayout();
-                    SetFormHeight();
-
-                    flpClients.Controls.Add(clientDisplay);
-
-                    clientDisplay.BrushSize = ecgDisplay.BrushSize;
-                    clientDisplay.ChartTime = Convert.ToInt32(nudChartTime.Value) * 1000;
-                    clientDisplay.Color = (Color)cbColor.SelectedItem;
-                    clientDisplay.Dock = System.Windows.Forms.DockStyle.Top;
-                    clientDisplay.Interval = ecgDisplay.Interval;
-                    clientDisplay.Margin = ecgDisplay.Margin;
-                    clientDisplay.Name = "ecgDisplay_" + clientId;
-                    clientDisplay.Nickname = nickname;
-                    clientDisplay.Offset = ecgDisplay.Offset;
-                    clientDisplay.Padding = ecgDisplay.Padding;
-                    clientDisplay.ShowNickname = true;
-                    clientDisplay.Size = ecgDisplay.Size;
-
-                    clientDisplay.MouseDown += HRMUISmall_MouseDown;
-                    clientDisplay.MouseMove += HRMUISmall_MouseMove;
-                    clientDisplay.MouseUp += HRMUISmall_MouseUp;
-                    clientDisplay.MouseEnter += ecgDisplay_MouseEnter;
-                    clientDisplay.MouseLeave += ecgDisplay_MouseLeave;
-
-                    this.ResumeLayout();
-                }
-            ));
-        }
-
-        void cardia_NetworkDisconnected(object sender, bool error)
-        {
-            this.Invoke(new MethodInvoker(
-                delegate()
-                {
-                    ecgDisplay.ShowNickname = false;
-
-                    foreach (ECGDisplay clientDisplay in displays.Values)
-                    {
-                        flpClients.Controls.Remove(clientDisplay);
-                        clientDisplay.Dispose();
-                    }
-                    displays.Clear();
-                    SetFormHeight();
-                }
-            ));
-        }
-
-        void cardia_NetworkConnected(object sender, string nickname)
-        {
-            this.Invoke(new MethodInvoker(
-                delegate()
-                {
-                    ecgDisplay.Nickname = nickname;
-                    ecgDisplay.ShowNickname = true;
-                }
-            ));
-        }
-
-        private void miNetwork_Click(object sender, EventArgs e)
-        {
-            networkPanel.Show();
-            networkPanel.Focus();
-        }
-
-        #endregion Networking
     }
 }

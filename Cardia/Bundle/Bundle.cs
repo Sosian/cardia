@@ -14,7 +14,6 @@ namespace MGT.Cardia
         public abstract HeartRateMonitor Device { get; }
         public abstract HRMDeviceFrm DeviceControlForm { get; }
         public abstract IHRMFileLogger CSVLogger { get; }
-        public abstract IHRMFileLogger XLSXLogger { get; }
         public abstract IHRMFileLogger XMLLogger { get; }
         public abstract IHRMNetLogger UDPLogger { get; }
         public abstract DeviceConfiguration.DeviceType ConfigEnumerator { get; }

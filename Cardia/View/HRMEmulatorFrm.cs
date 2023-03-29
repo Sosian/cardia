@@ -7,7 +7,6 @@ using System.Linq;
 using System.Text;
 using System.Windows.Forms;
 using MGT.HRM;
-using MGT.HRM.Zephyr_HxM;
 using MGT.HRM.Emulator;
 
 namespace MGT.Cardia

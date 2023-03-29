@@ -9,7 +9,6 @@ using System.Windows.Forms;
 using MGT.Utilities.Network;
 using MGT.HRM;
 using MGT.HRM.Emulator;
-using MGT.HRM.Zephyr_HxM;
 using MGT.Utilities.EventHandlers;
 
 namespace MGT.Cardia

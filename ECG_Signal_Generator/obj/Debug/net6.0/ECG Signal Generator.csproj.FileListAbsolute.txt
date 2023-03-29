@@ -1,0 +1,7 @@
+C:\Users\flori\Documents\DanceSensors\cardia\cardia.Net\ECG Signal Generator\obj\Debug\net6.0\ECG Signal Generator.csproj.AssemblyReference.cache
+C:\Users\flori\Documents\DanceSensors\cardia\cardia.Net\ECG Signal Generator\obj\Debug\net6.0\ECG_Signal_Generator.ECGBitmaps.resources
+C:\Users\flori\Documents\DanceSensors\cardia\cardia.Net\ECG Signal Generator\obj\Debug\net6.0\ECG Signal Generator.csproj.GenerateResource.cache
+C:\Users\flori\Documents\DanceSensors\cardia\cardia.Net\ECG Signal Generator\obj\Debug\net6.0\ECG Signal Generator.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\flori\Documents\DanceSensors\cardia\cardia.Net\ECG Signal Generator\obj\Debug\net6.0\ECG Signal Generator.AssemblyInfoInputs.cache
+C:\Users\flori\Documents\DanceSensors\cardia\cardia.Net\ECG Signal Generator\obj\Debug\net6.0\ECG Signal Generator.AssemblyInfo.cs
+C:\Users\flori\Documents\DanceSensors\cardia\cardia.Net\ECG Signal Generator\obj\Debug\net6.0\ECG Signal Generator.csproj.CoreCompileInputs.cache

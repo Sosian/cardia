@@ -28,7 +28,7 @@ namespace MGT.Cardia
             this.labelProductName.Text = AssemblyAttributes.AssemblyProduct;
             this.labelVersion.Text = String.Format("Version {0}", AssemblyAttributes.AssemblyFullVersion);
             this.labelCopyright.Text = AssemblyAttributes.AssemblyCopyright;
-            this.textBoxDescription.Text = Resources.Description;
+            //this.textBoxDescription.Text = Resources.Description;
         }
 
         private void About_FormClosing(object sender, FormClosingEventArgs e)

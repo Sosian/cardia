@@ -20,7 +20,6 @@ namespace MGT.Cardia
         private readonly BtHrp btHrp = new BtHrp();
         private readonly BtHrpFrm btHrpFrm;
         private readonly BtHrpLoggerCSV csvLogger = new BtHrpLoggerCSV();
-        private readonly BtHrpLoggerXLSX xlsxLogger = new BtHrpLoggerXLSX();
         private readonly BtHrpLoggerXML xmlLogger = new BtHrpLoggerXML();
         private readonly BtHrpLoggerUDP udpLogger = new BtHrpLoggerUDP();
 
@@ -80,7 +79,6 @@ namespace MGT.Cardia
         public override HeartRateMonitor Device => btHrp;
         public override HRMDeviceFrm DeviceControlForm => btHrpFrm;
         public override IHRMFileLogger CSVLogger => csvLogger;
-        public override IHRMFileLogger XLSXLogger => xlsxLogger;
         public override IHRMFileLogger XMLLogger => xmlLogger;
         public override IHRMNetLogger UDPLogger => udpLogger;
         public override DeviceConfiguration.DeviceType ConfigEnumerator => DeviceConfiguration.DeviceType.BtHrp;

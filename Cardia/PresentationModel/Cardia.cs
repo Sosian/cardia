@@ -27,11 +27,10 @@ namespace MGT.Cardia
             this.configuration = configuration;
             this.Bundles = bundles;
 
-            signalGenerator.OnSignalGenerated += signalGenerator_SignalGenerated;
+            //signalGenerator.OnSignalGenerated += signalGenerator_SignalGenerated;
             alarm.AlarmChanged += alarm_AlarmChanged;
 
             InitializeLoggers();
-            InitializeNetworkProvider();
             InitializeColors();
         }
 
@@ -42,7 +41,7 @@ namespace MGT.Cardia
         // Fields
         private Bundle bundle;
         private const int BUFFER_TIME = 10000;
-        private SignalGenerator signalGenerator = new SignalGenerator(BUFFER_TIME);
+        //private SignalGenerator signalGenerator = new SignalGenerator(BUFFER_TIME);
         private HRMAlarm alarm = new HRMAlarm();
 
         // Events
@@ -77,8 +76,8 @@ namespace MGT.Cardia
                 {
                     if (bck != null)
                         bck.Device.ResetSubscriptions();
-
-                    RegisterHrmEventHandlers();
+                    if (bundle != null)
+                        RegisterHrmEventHandlers();
 
                     if (BundleChanged != null)
                         BundleChanged(this, bundle);
@@ -104,7 +103,7 @@ namespace MGT.Cardia
         // HRM event handler
         private void hrm_PacketProcessed(object sender, PacketProcessedEventArgs e)
         {
-            signalGenerator.BPM = (int)e.HRMPacket.HeartRate;
+            //signalGenerator.BPM = (int)e.HRMPacket.HeartRate;
             alarm.BPM = (int)e.HRMPacket.HeartRate;
 
             if (logger != null && logger.Running)
@@ -356,10 +355,11 @@ namespace MGT.Cardia
         // Methods
         public void Init()
         {
-            RegisterBundlesEventHandlers();
-            LoadConfig();
             if (bundle == null)
                 bundle = Bundles[0];
+            RegisterBundlesEventHandlers();
+            LoadConfig();
+            
 
             FireEventChain();
         }
@@ -383,7 +383,8 @@ namespace MGT.Cardia
                 }
             }
 
-            RegisterHrmEventHandlers();
+            if (bundle != null)
+                RegisterHrmEventHandlers();
 
             color = Colors[configuration.Color];
 
@@ -418,9 +419,6 @@ namespace MGT.Cardia
                     break;
                 case LogFormat.XML:
                     logger = bundle.XMLLogger;
-                    break;
-                case LogFormat.XLSX:
-                    logger = bundle.XLSXLogger;
                     break;
                 case LogFormat.UDP:
                     logger = bundle.UDPLogger;
@@ -474,12 +472,6 @@ namespace MGT.Cardia
 
             if (LoggerChanged != null)
                 LoggerChanged(this, logger);
-
-            if (NetworkModeChanged != null)
-                NetworkModeChanged(this, networkMode);
-            if (NetworkRelayChanged != null)
-                NetworkRelayChanged(this, networkRelay); // Useless? Should be already called by NetworkModeChanged
-            networkRelay.Init();
         }
 
         public void Start()
@@ -518,7 +510,7 @@ namespace MGT.Cardia
 
             if (bundle.Device.Running)
             {
-                signalGenerator.Start();
+                //signalGenerator.Start();
 
                 if (Started != null)
                     Started(this);
@@ -535,13 +527,10 @@ namespace MGT.Cardia
             if (stopHrm)
                 bundle.Device.Stop();
 
-            signalGenerator.Stop();
+            //signalGenerator.Stop();
 
             if (AlarmTripped != null)
                 AlarmTripped(this, false);
-
-            if (networkRelay != null && networkRelay.Running)
-                networkRelay.Send(new HeartRateMessage(null, null, null));
 
             if (logger != null && logger.Running)
                 logger.Stop();
@@ -589,14 +578,6 @@ namespace MGT.Cardia
                 configuration.Log.Port = ((IHRMNetLogger)logger).Port;
             }
 
-            configuration.Network.Mode = networkMode;
-
-            if (networkRelay is TcpRelayClient<HeartRateMessage>)
-                configuration.Network.Address = ((TcpRelayClient<HeartRateMessage>)networkRelay).ServerAddress;
-
-            configuration.Network.Port = networkRelay.Port;
-
-            configuration.Network.Nickname = networkRelay.Nickname;
         }
 
         #endregion Commands
@@ -678,9 +659,6 @@ namespace MGT.Cardia
             {
                 case LogFormat.CSV:
                     Logger = bundle.CSVLogger;
-                    break;
-                case LogFormat.XLSX:
-                    Logger = bundle.XLSXLogger;
                     break;
                 case LogFormat.XML:
                     Logger = bundle.XMLLogger;
@@ -842,30 +820,6 @@ namespace MGT.Cardia
             networkRelay.OnclientDisconnected -= networkProvider_OnclientDisconnected;
             networkRelay.OnProviderDisconnected -= networkProvider_OnProviderDisconnected;
             networkRelay.OnClientMessageReceived -= networkProvider_OnClientMessageReceived;
-        }
-
-        private void InitializeNetworkProvider()
-        {
-            networkRelays = new List<NetworkRelay<HeartRateMessage>>();
-            TcpRelayClient<HeartRateMessage> client = new TcpRelayClient<HeartRateMessage>();
-            client.Timeout = 10000;
-            client.Version = networkVersion;
-            networkRelays.Add(client);
-
-            TcpRelayServer<HeartRateMessage> server = new TcpRelayServer<HeartRateMessage>();
-            server.MaxConnections = 4;
-            server.Timeout = 10000;
-            server.Version = networkVersion;
-            networkRelays.Add(server);
-
-            NetworkMode = configuration.Network.Mode;
-            networkRelay.Port = configuration.Network.Port;
-            networkRelay.Nickname = configuration.Network.Nickname;
-
-            client.ServerAddress = configuration.Network.Address;
-
-            networkSampler = new NetworkSampler(this);
-            networkSampler.PacketSampled += networkSampler_PacketSampled;
         }
 
         void networkSampler_PacketSampled(object sender, IHRMPacket hrmPacket, byte? minHeartRate, byte? maxHeartRate)

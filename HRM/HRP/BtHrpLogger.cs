@@ -2,13 +2,13 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
-using MGT.Utilities.EventHandlers;
+//using MGT.Utilities.EventHandlers;
 
 namespace MGT.HRM.HRP
 {
     public abstract class BtHrpLogger : IHRMLogger
     {
-        public event GenericEventHandler<bool> LoggerStatusChanged;
+        //public event GenericEventHandler<bool> LoggerStatusChanged; TODO
 
         protected bool running = false;
         public bool Running
@@ -32,8 +32,8 @@ namespace MGT.HRM.HRP
 
             running = true;
 
-            if (LoggerStatusChanged != null)
-                LoggerStatusChanged(this, running);
+            // if (LoggerStatusChanged != null)
+            //     LoggerStatusChanged(this, running);
         }
 
         protected abstract void BtHrpStart();
@@ -47,8 +47,8 @@ namespace MGT.HRM.HRP
 
             BtHrpStop();
 
-            if (LoggerStatusChanged != null)
-                LoggerStatusChanged(this, running);
+            // if (LoggerStatusChanged != null)
+            //     LoggerStatusChanged(this, running);
         }
 
         protected abstract void BtHrpStop();
@@ -66,7 +66,7 @@ namespace MGT.HRM.HRP
 
         public virtual void ResetSubscriptions()
         {
-            LoggerStatusChanged = null;
+            // LoggerStatusChanged = null;
         }
 
         protected abstract void BtHrpLog(BtHrpPacket btHrpPacket);

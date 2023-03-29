@@ -2,15 +2,15 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
-using MGT.Utilities.EventHandlers;
+//using MGT.Utilities.EventHandlers;
 
 namespace MGT.HRM.HRP
 {
     public abstract class BtHrpNetLogger : BtHrpLogger, IHRMNetLogger
     {
-        public event GenericEventHandler<string> AddressChanged;
-        public event GenericEventHandler<int> SourcePortChanged;
-        public event GenericEventHandler<int> PortChanged;
+        // public event GenericEventHandler<string> AddressChanged; TODO
+        // public event GenericEventHandler<int> SourcePortChanged;
+        // public event GenericEventHandler<int> PortChanged;
 
         protected string ipAddress;
         public string Address
@@ -27,9 +27,9 @@ namespace MGT.HRM.HRP
                 string bck = ipAddress;
 
                 ipAddress = value;
-                if (bck != value)
-                    if (AddressChanged != null)
-                        AddressChanged(this, value);
+                // if (bck != value)
+                    // if (AddressChanged != null)
+                    //     AddressChanged(this, value);
             }
         }
 
@@ -48,9 +48,9 @@ namespace MGT.HRM.HRP
                 int bck = sourcePort;
 
                 sourcePort = value;
-                if (bck != value)
-                    if (AddressChanged != null)
-                        SourcePortChanged(this, value);
+                // if (bck != value)
+                    // if (AddressChanged != null)
+                    //     SourcePortChanged(this, value);
             }
         }
 
@@ -69,18 +69,18 @@ namespace MGT.HRM.HRP
                 int bck = destinationPort;
 
                 destinationPort = value;
-                if (bck != value)
-                    if (AddressChanged != null)
-                        PortChanged(this, value);
+                // if (bck != value)
+                    // if (AddressChanged != null)
+                    //     PortChanged(this, value);
             }
         }
 
         public override void ResetSubscriptions()
         {
             base.ResetSubscriptions();
-            AddressChanged = null;
-            SourcePortChanged = null;
-            PortChanged = null;
+            // AddressChanged = null;
+            // SourcePortChanged = null;
+            // PortChanged = null;
         }
     }
 }

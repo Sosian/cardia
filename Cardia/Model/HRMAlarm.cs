@@ -20,7 +20,7 @@ namespace MGT.Cardia
         private bool defused;
         private TimeSpan defuseTime;
         private DateTime? alarmStartTime;
-        private Timer defuseTimer = new Timer(1000);
+        private System.Timers.Timer defuseTimer = new System.Timers.Timer(1000);
 
         private int bpm;
 

@@ -60,8 +60,6 @@ namespace MGT.Cardia
         {
             List<Bundle> bundles = new List<Bundle>();
 
-            bundles.Add(new ZephyrHxMBundle());
-            bundles.Add(new CMS50Bundle());
             bundles.Add(new BtHrpBundle());
             bundles.Add(new HRMEmulatorBundle());
 

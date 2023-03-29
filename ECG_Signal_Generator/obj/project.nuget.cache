@@ -1,0 +1,12 @@
+{
+  "version": 2,
+  "dgSpecHash": "S1EqP5UC5f9rOStAtlHJol2iZBM/WAKDk95tBjY5VCiTnlZlttvqxYl7kgs5v76xDTu5Ndx7hK7GZc2mFbGlHg==",
+  "success": true,
+  "projectFilePath": "C:\\Users\\flori\\Documents\\DanceSensors\\cardia\\ECG_Signal_Generator\\ECG_Signal_Generator.csproj",
+  "expectedPackageFiles": [
+    "C:\\Users\\flori\\.nuget\\packages\\microsoft.win32.systemevents\\7.0.0\\microsoft.win32.systemevents.7.0.0.nupkg.sha512",
+    "C:\\Users\\flori\\.nuget\\packages\\system.drawing.common\\7.0.0\\system.drawing.common.7.0.0.nupkg.sha512",
+    "C:\\Users\\flori\\.nuget\\packages\\system.resources.extensions\\7.0.0\\system.resources.extensions.7.0.0.nupkg.sha512"
+  ],
+  "logs": []
+}

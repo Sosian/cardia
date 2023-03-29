@@ -15,7 +15,6 @@ namespace MGT.Cardia
         private readonly HRMEmulator hrmEmulator = new HRMEmulator();
         private readonly HRMEmulatorFrm hrmEmulatorFrm;
         private readonly HRMEmulatorLoggerCSV csvLogger = new HRMEmulatorLoggerCSV();
-        private readonly HRMEmulatorLoggerXLSX xlsxLogger = new HRMEmulatorLoggerXLSX();
         private readonly HRMEmulatorLoggerXML xmlLogger = new HRMEmulatorLoggerXML();
         private readonly HRMEmulatorLoggerUDP udpLogger = new HRMEmulatorLoggerUDP();
 
@@ -27,7 +26,6 @@ namespace MGT.Cardia
         public override HeartRateMonitor Device => hrmEmulator;
         public override HRMDeviceFrm DeviceControlForm => hrmEmulatorFrm;
         public override IHRMFileLogger CSVLogger => csvLogger;
-        public override IHRMFileLogger XLSXLogger => xlsxLogger;
         public override IHRMFileLogger XMLLogger => xmlLogger;
         public override IHRMNetLogger UDPLogger => udpLogger;
         public override DeviceConfiguration.DeviceType ConfigEnumerator => DeviceConfiguration.DeviceType.HRMEmulator;

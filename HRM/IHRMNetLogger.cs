@@ -2,16 +2,16 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
-using MGT.Utilities.EventHandlers;
+//using MGT.Utilities.EventHandlers;
 
 namespace MGT.HRM
 {
     public interface IHRMNetLogger : IHRMLogger
     {
 
-        event GenericEventHandler<string> AddressChanged;
+        // event GenericEventHandler<string> AddressChanged; TODO
 
-        event GenericEventHandler<int> PortChanged;
+        // event GenericEventHandler<int> PortChanged;
 
         string Address { get; set; }
 

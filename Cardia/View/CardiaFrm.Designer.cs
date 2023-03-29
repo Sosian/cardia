@@ -293,13 +293,6 @@
             this.logToolStripMenuItem.Text = "Log";
             this.logToolStripMenuItem.Click += new System.EventHandler(this.miLog_Click);
             // 
-            // networkToolStripMenuItem
-            // 
-            this.networkToolStripMenuItem.Name = "networkToolStripMenuItem";
-            this.networkToolStripMenuItem.Size = new System.Drawing.Size(64, 20);
-            this.networkToolStripMenuItem.Text = "Network";
-            this.networkToolStripMenuItem.Click += new System.EventHandler(this.miNetwork_Click);
-            // 
             // aboutToolStripMenuItem
             // 
             this.aboutToolStripMenuItem.Name = "aboutToolStripMenuItem";

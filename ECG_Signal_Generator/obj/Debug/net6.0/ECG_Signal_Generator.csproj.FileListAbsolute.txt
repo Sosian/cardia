@@ -1,0 +1,41 @@
+C:\Users\flori\Documents\DanceSensors\cardia\cardia.Net\ECG Signal Generator\obj\Debug\net6.0\ECG_Signal_Generator.csproj.AssemblyReference.cache
+C:\Users\flori\Documents\DanceSensors\cardia\cardia.Net\ECG Signal Generator\obj\Debug\net6.0\ECG_Signal_Generator.ECGBitmaps.resources
+C:\Users\flori\Documents\DanceSensors\cardia\cardia.Net\ECG Signal Generator\obj\Debug\net6.0\ECG_Signal_Generator.csproj.GenerateResource.cache
+C:\Users\flori\Documents\DanceSensors\cardia\cardia.Net\ECG Signal Generator\obj\Debug\net6.0\ECG_Signal_Generator.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\flori\Documents\DanceSensors\cardia\cardia.Net\ECG Signal Generator\obj\Debug\net6.0\ECG_Signal_Generator.AssemblyInfoInputs.cache
+C:\Users\flori\Documents\DanceSensors\cardia\cardia.Net\ECG Signal Generator\obj\Debug\net6.0\ECG_Signal_Generator.AssemblyInfo.cs
+C:\Users\flori\Documents\DanceSensors\cardia\cardia.Net\ECG Signal Generator\obj\Debug\net6.0\ECG_Signal_Generator.csproj.CoreCompileInputs.cache
+C:\Users\flori\Documents\DanceSensors\cardia\cardia.Net\ECG_Signal_Generator\obj\Debug\net6.0\ECG_Signal_Generator.csproj.AssemblyReference.cache
+C:\Users\flori\Documents\DanceSensors\cardia\cardia.Net\ECG_Signal_Generator\obj\Debug\net6.0\ECG_Signal_Generator.ECGBitmaps.resources
+C:\Users\flori\Documents\DanceSensors\cardia\cardia.Net\ECG_Signal_Generator\obj\Debug\net6.0\ECG_Signal_Generator.csproj.GenerateResource.cache
+C:\Users\flori\Documents\DanceSensors\cardia\cardia.Net\ECG_Signal_Generator\obj\Debug\net6.0\ECG_Signal_Generator.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\flori\Documents\DanceSensors\cardia\cardia.Net\ECG_Signal_Generator\obj\Debug\net6.0\ECG_Signal_Generator.AssemblyInfoInputs.cache
+C:\Users\flori\Documents\DanceSensors\cardia\cardia.Net\ECG_Signal_Generator\obj\Debug\net6.0\ECG_Signal_Generator.AssemblyInfo.cs
+C:\Users\flori\Documents\DanceSensors\cardia\cardia.Net\ECG_Signal_Generator\obj\Debug\net6.0\ECG_Signal_Generator.csproj.CoreCompileInputs.cache
+C:\Users\flori\Documents\DanceSensors\cardia\cardia.Net\ECG_Signal_Generator\bin\Debug\net6.0\ECG_Signal_Generator.deps.json
+C:\Users\flori\Documents\DanceSensors\cardia\cardia.Net\ECG_Signal_Generator\bin\Debug\net6.0\ECG_Signal_Generator.dll
+C:\Users\flori\Documents\DanceSensors\cardia\cardia.Net\ECG_Signal_Generator\bin\Debug\net6.0\ECG_Signal_Generator.pdb
+C:\Users\flori\Documents\DanceSensors\cardia\cardia.Net\ECG_Signal_Generator\bin\Debug\net6.0\Utilities.dll
+C:\Users\flori\Documents\DanceSensors\cardia\cardia.Net\ECG_Signal_Generator\bin\Debug\net6.0\Utilities.pdb
+C:\Users\flori\Documents\DanceSensors\cardia\cardia.Net\ECG_Signal_Generator\obj\Debug\net6.0\ECG_Signal_Generator.csproj.CopyComplete
+C:\Users\flori\Documents\DanceSensors\cardia\cardia.Net\ECG_Signal_Generator\obj\Debug\net6.0\ECG_Signal_Generator.dll
+C:\Users\flori\Documents\DanceSensors\cardia\cardia.Net\ECG_Signal_Generator\obj\Debug\net6.0\refint\ECG_Signal_Generator.dll
+C:\Users\flori\Documents\DanceSensors\cardia\cardia.Net\ECG_Signal_Generator\obj\Debug\net6.0\ECG_Signal_Generator.pdb
+C:\Users\flori\Documents\DanceSensors\cardia\cardia.Net\ECG_Signal_Generator\obj\Debug\net6.0\ref\ECG_Signal_Generator.dll
+C:\Users\flori\Documents\DanceSensors\cardia\ECG_Signal_Generator\bin\Debug\net6.0\ECG_Signal_Generator.deps.json
+C:\Users\flori\Documents\DanceSensors\cardia\ECG_Signal_Generator\bin\Debug\net6.0\ECG_Signal_Generator.dll
+C:\Users\flori\Documents\DanceSensors\cardia\ECG_Signal_Generator\bin\Debug\net6.0\ECG_Signal_Generator.pdb
+C:\Users\flori\Documents\DanceSensors\cardia\ECG_Signal_Generator\bin\Debug\net6.0\Utilities.dll
+C:\Users\flori\Documents\DanceSensors\cardia\ECG_Signal_Generator\bin\Debug\net6.0\Utilities.pdb
+C:\Users\flori\Documents\DanceSensors\cardia\ECG_Signal_Generator\obj\Debug\net6.0\ECG_Signal_Generator.csproj.AssemblyReference.cache
+C:\Users\flori\Documents\DanceSensors\cardia\ECG_Signal_Generator\obj\Debug\net6.0\ECG_Signal_Generator.ECGBitmaps.resources
+C:\Users\flori\Documents\DanceSensors\cardia\ECG_Signal_Generator\obj\Debug\net6.0\ECG_Signal_Generator.csproj.GenerateResource.cache
+C:\Users\flori\Documents\DanceSensors\cardia\ECG_Signal_Generator\obj\Debug\net6.0\ECG_Signal_Generator.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\flori\Documents\DanceSensors\cardia\ECG_Signal_Generator\obj\Debug\net6.0\ECG_Signal_Generator.AssemblyInfoInputs.cache
+C:\Users\flori\Documents\DanceSensors\cardia\ECG_Signal_Generator\obj\Debug\net6.0\ECG_Signal_Generator.AssemblyInfo.cs
+C:\Users\flori\Documents\DanceSensors\cardia\ECG_Signal_Generator\obj\Debug\net6.0\ECG_Signal_Generator.csproj.CoreCompileInputs.cache
+C:\Users\flori\Documents\DanceSensors\cardia\ECG_Signal_Generator\obj\Debug\net6.0\ECG_Signal_Generator.csproj.CopyComplete
+C:\Users\flori\Documents\DanceSensors\cardia\ECG_Signal_Generator\obj\Debug\net6.0\ECG_Signal_Generator.dll
+C:\Users\flori\Documents\DanceSensors\cardia\ECG_Signal_Generator\obj\Debug\net6.0\refint\ECG_Signal_Generator.dll
+C:\Users\flori\Documents\DanceSensors\cardia\ECG_Signal_Generator\obj\Debug\net6.0\ECG_Signal_Generator.pdb
+C:\Users\flori\Documents\DanceSensors\cardia\ECG_Signal_Generator\obj\Debug\net6.0\ref\ECG_Signal_Generator.dll

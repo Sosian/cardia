@@ -13,7 +13,7 @@ namespace MGT.HRM.Emulator
 
         public override string Name { get { return "Emulator"; } }
 
-        Timer timer;
+        System.Timers.Timer timer;
         Random random = new Random();
         private int maxSlope = 1;
 
@@ -78,7 +78,7 @@ namespace MGT.HRM.Emulator
             TotalPackets = 0;
             HeartBeats = 0;
             bpm = random.Next(55, 81);
-            timer = new Timer();
+            timer = new System.Timers.Timer();
             timer.Interval = 1000;
             timer.Elapsed += timer_Elapsed;
         }

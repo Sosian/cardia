@@ -2,13 +2,13 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
-using MGT.Utilities.EventHandlers;
+//using MGT.Utilities.EventHandlers;
 
 namespace MGT.HRM
 {
     public interface IHRMLogger : IDisposable
     {
-        event GenericEventHandler<bool> LoggerStatusChanged;
+        //event GenericEventHandler<bool> LoggerStatusChanged; TODO
 
         bool Running { get; }
 

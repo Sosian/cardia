@@ -12,7 +12,7 @@ namespace MGT.Cardia
     {
         private Cardia cardia;
 
-        private Timer networkTimer = new Timer();
+        private System.Timers.Timer networkTimer = new System.Timers.Timer();
 
         public event GenericEventHandler<IHRMPacket, byte?, byte?> PacketSampled;
 
